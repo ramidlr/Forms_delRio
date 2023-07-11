@@ -30,7 +30,7 @@ constructor(private fb: FormBuilder) {
     password: new FormControl('', [Validators.minLength(8), Validators.required]),
     city: new FormControl(''),
     address: new FormControl(''),
-    course: new FormControl('', Validators.requiredTrue)
+    course: new FormControl('', Validators.required)
   });
 }
 

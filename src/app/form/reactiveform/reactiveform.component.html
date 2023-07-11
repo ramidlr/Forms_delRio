@@ -44,7 +44,7 @@
           <input formControlName="password" type="password" class="form-control" id="inputPassword"
           [class.is-invalid]="studentForm.get('password')?.touched && studentForm.get('password')?.invalid"
           [class.minlenght]="studentForm.get('password')?.errors?.['minlenght']"/>
-          <div *ngIf="studentForm.get('password')?.touched && studentForm.get('password')?.invalid "
+          <div *ngIf="studentForm.get('password')?.touched && studentForm.get('password')?.invalid"
           class="invalid-feedback">Completa el password para continuar.</div>
           <div *ngIf="studentForm.get('password')?.errors?.['minlength']"
           class="class.minlenght">La password debe tener al menos 8 caracteres.</div></div>
@@ -60,15 +60,15 @@
         </div>
       
         <select class="form-select" aria-label="Default select example" formControlName="course" id="inputCourse"
-        [class.is-invalid]="studentForm.get('course')?.touched">
-        
-          <option selected>Elige el Curso</option>
+        [class.is-invalid]="studentForm.get('course')?.dirty && studentForm.get('course')?.errors"> 
+          <option value="">Elige un Curso</option>
           <option value="1">Angular</option>
           <option value="2">React</option>
           <option value="3">UX-UI Advanced Remote</option>
-
-          <div class="invalid-feedback">Elige un curso para continuar</div>
         </select>
+        
+        <div class="invalid-feedback">Debes elegir un curso para continuar</div>
+
 
             <br>
             <div class="col-12">
