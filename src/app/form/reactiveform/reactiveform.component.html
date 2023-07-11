@@ -1,4 +1,4 @@
-<p>reactiveform works!</p>
+<h3>Completa el siguiente formulario de alumno para darlo de alta</h3>
 
 <div class="card">
   <div class="card-body">
@@ -30,35 +30,31 @@
           <input formControlName="city" type="text" class="form-control" id="inputCity"/>
         </div>
        
-        <div class="col-12">
-                   <div class="mb-3">
-            <label for="inputAddress" class="form-label">Addresses</label>
-            <input formControlName="address" type="text" class="form-control" id="inputAddress"/>
-
+        <div class="mb-3">
+          <label for="inputAddress" class="form-label">Addresses</label>
+          <input formControlName="address" type="text" class="form-control" id="inputAddress"/>
+        </div>
         
-            <div class="input-group mb-3">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</button>
-              <ul class="dropdown-menu">
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</button>
+            <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Angular</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">React</a></li>
+                <li><a class="dropdown-item" href="#">UX-UI Advanced</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Separated link</a></li>
-              </ul>
-              <input type="text" class="form-control" aria-label="Text input with dropdown button">
-            </div> 
+            </ul>
+        </div>
+
 
             <br>
-            <button type="submit">Submit</button>
-          </div>
-        </div>
+            <button type="submit">Confirmar</button>
         </form>
 
           <div class="col-4">
-            <h5>Valor</h5>
+            <h5>Valores del Form</h5>
             <pre>{{ studentForm.value | json }}</pre>
         </div>
       
     
-    //
+    
 
