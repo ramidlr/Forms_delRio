@@ -1,9 +1,18 @@
-<h3>Completa el siguiente formulario de alumno para darlo de alta</h3>
+
+<div class="containerall">
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Completa el siguiente formulario para agregar un alumno</span>
+  </div>
+</nav>
+
+<br>
 
 <div class="card">
   <div class="card-body">
     <div class="row">
       <form [formGroup]="studentForm" class="row col-8 g-3" (ngSubmit)="onSubmit()">
+    
 
         <div class="col-md-6">
           <label for="inputName" class="form-label">Nombre</label>
@@ -11,43 +20,42 @@
         </div>
 
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Apellido</label>
-          <input formControlName="surname" type="email" class="form-control" id="inputEmail4"/>
+          <label for="inputSurname" class="form-label">Apellido</label>
+          <input formControlName="surname" type="email" class="form-control" id="inputSurname"/>
         </div>
 
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Email</label>
-          <input formControlName="email" type="email" class="form-control" id="inputEmail4"/>
+          <label for="inputEmail" class="form-label">Email</label>
+          <input formControlName="email" type="email" class="form-control" id="inputEmail"/>
         </div>
 
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Password</label>
-          <input formControlName="password" type="password" class="form-control" id="inputPassword4" />
+          <label for="inputPassword" class="form-label">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="inputPassword" />
         </div>
 
         <div class="col-md-6">
-          <label for="inputCity" class="form-label">City</label>
+          <label for="inputCity" class="form-label">Ciudad</label>
           <input formControlName="city" type="text" class="form-control" id="inputCity"/>
         </div>
        
-        <div class="mb-3">
-          <label for="inputAddress" class="form-label">Addresses</label>
+        <div class="col-md-6">
+          <label for="inputAddress" class="form-label">Domicilio</label>
           <input formControlName="address" type="text" class="form-control" id="inputAddress"/>
         </div>
-        
-        <div class="input-group mb-3">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Angular</a></li>
-                <li><a class="dropdown-item" href="#">React</a></li>
-                <li><a class="dropdown-item" href="#">UX-UI Advanced</a></li>
-                <li><hr class="dropdown-divider"></li>
-            </ul>
-        </div>
+      
+        <select class="form-select" aria-label="Default select example" formControlName="courses" id="inputCourse">
+          <option selected>Elige el Curso</option>
+          <option value="1">Angular</option>
+          <option value="2">React</option>
+          <option value="3">UX-UI Advanced Remote</option>
+        </select>
 
 
             <br>
-            <button type="submit">Confirmar</button>
+            <div class="col-12">
+              <button type="submit" class="btn btn-success">Confirmar</button>
+            </div>
         </form>
 
           <div class="col-4">
@@ -56,5 +64,4 @@
         </div>
       
     
-    
-
+</div>
