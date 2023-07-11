@@ -1,2 +1,64 @@
 <p>reactiveform works!</p>
 
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <form [formGroup]="studentForm" class="row col-8 g-3" (ngSubmit)="onSubmit()">
+
+        <div class="col-md-6">
+          <label for="inputName" class="form-label">Nombre</label>
+          <input formControlName="name" type="text" class="form-control" id="inputName"/>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Apellido</label>
+          <input formControlName="surname" type="email" class="form-control" id="inputEmail4"/>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input formControlName="email" type="email" class="form-control" id="inputEmail4"/>
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="inputPassword4" />
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input formControlName="city" type="text" class="form-control" id="inputCity"/>
+        </div>
+       
+        <div class="col-12">
+                   <div class="mb-3">
+            <label for="inputAddress" class="form-label">Addresses</label>
+            <input formControlName="address" type="text" class="form-control" id="inputAddress"/>
+
+        
+            <div class="input-group mb-3">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Angular</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+              <input type="text" class="form-control" aria-label="Text input with dropdown button">
+            </div> 
+
+            <br>
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+        </form>
+
+          <div class="col-4">
+            <h5>Valor</h5>
+            <pre>{{ studentForm.value | json }}</pre>
+        </div>
+      
+    
+    //
+

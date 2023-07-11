@@ -17,10 +17,15 @@ interface StudentModel {
   styleUrls: ['./reactiveform.component.scss']
 })
 export class ReactiveformComponent {
+onSubmit() {
+throw new Error('Completa los campos correctamente.');
+}
+
+  studentForm: FormGroup
 
 constructor(private fb: FormBuilder) {
 
-let studentForm: FormGroup<StudentModel> = new FormGroup({
+  this.studentForm = this.fb.group<StudentModel>({
     name: new FormControl(''),
     surname: new FormControl(''),
     email: new FormControl('', [Validators.email, Validators.required]),
