@@ -1,5 +1,3 @@
-
-<div class="containerall">
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1">Completa el siguiente formulario para agregar un alumno</span>
@@ -11,28 +9,45 @@
 <div class="card">
   <div class="card-body">
     <div class="row">
-      <form [formGroup]="studentForm" class="row col-8 g-3" (ngSubmit)="onSubmit()">
+      <form [formGroup]="studentForm" class="row col-8 g-3">
     
 
         <div class="col-md-6">
           <label for="inputName" class="form-label">Nombre</label>
-          <input formControlName="name" type="text" class="form-control" id="inputName"/>
+          <input formControlName="name" type="text" class="form-control" id="inputName"
+          [class.is-invalid]="studentForm.get('name')?.touched && studentForm.get('name')?.invalid"/>
+          <div class="invalid-feedback">
+            Completa tu nombre para continuar
+          </div>
         </div>
 
         <div class="col-md-6">
           <label for="inputSurname" class="form-label">Apellido</label>
-          <input formControlName="surname" type="email" class="form-control" id="inputSurname"/>
+          <input formControlName="surname" type="email" class="form-control" id="inputSurname"
+          [class.is-invalid]="studentForm.get('surname')?.touched && studentForm.get('surname')?.invalid"/>
+          <div class="invalid-feedback">
+            Completa tu apellido para continuar
+          </div>
         </div>
 
         <div class="col-md-6">
           <label for="inputEmail" class="form-label">Email</label>
-          <input formControlName="email" type="email" class="form-control" id="inputEmail"/>
+          <input formControlName="email" type="email" class="form-control" id="inputEmail"
+          [class.is-invalid]="studentForm.get('email')?.touched && studentForm.get('email')?.invalid"/>
+          <div class="invalid-feedback">
+            Completa tu email para continuar
+          </div>
         </div>
 
         <div class="col-md-6">
           <label for="inputPassword" class="form-label">Password</label>
-          <input formControlName="password" type="password" class="form-control" id="inputPassword" />
-        </div>
+          <input formControlName="password" type="password" class="form-control" id="inputPassword"
+          [class.is-invalid]="studentForm.get('password')?.touched && studentForm.get('password')?.invalid"
+          [class.minlenght]="studentForm.get('password')?.errors?.['minlenght']"/>
+          <div *ngIf="studentForm.get('password')?.touched && studentForm.get('password')?.invalid "
+          class="invalid-feedback">Completa el password para continuar.</div>
+          <div *ngIf="studentForm.get('password')?.errors?.['minlength']"
+          class="class.minlenght">La password debe tener al menos 8 caracteres.</div></div>
 
         <div class="col-md-6">
           <label for="inputCity" class="form-label">Ciudad</label>
@@ -44,19 +59,23 @@
           <input formControlName="address" type="text" class="form-control" id="inputAddress"/>
         </div>
       
-        <select class="form-select" aria-label="Default select example" formControlName="courses" id="inputCourse">
+        <select class="form-select" aria-label="Default select example" formControlName="course" id="inputCourse"
+        [class.is-invalid]="studentForm.get('course')?.touched">
+        
           <option selected>Elige el Curso</option>
           <option value="1">Angular</option>
           <option value="2">React</option>
           <option value="3">UX-UI Advanced Remote</option>
-        </select>
 
+          <div class="invalid-feedback">Elige un curso para continuar</div>
+        </select>
 
             <br>
             <div class="col-12">
-              <button type="submit" class="btn btn-success">Confirmar</button>
+              <button type="submit" class="btn btn-success" (click)="onSubmit()">Confirmar</button>
             </div>
-        </form>
+
+          </form>
 
           <div class="col-4">
             <h5>Valores del Form</h5>
@@ -64,4 +83,4 @@
         </div>
       
     
-</div>
+
